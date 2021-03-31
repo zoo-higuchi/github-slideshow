@@ -2,6 +2,7 @@ openapi: 3.0.0
 info:
   title: api_test_01
   version: '1.0'
+  description: ''
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -143,13 +144,42 @@ paths:
                   dateOfBirth: '1996-08-24'
         description: Post the necessary fields for the API to create a new user.
       description: Create a new user.
+    patch:
+      summary: ''
+      operationId: patch-user
+      responses:
+        '200':
+          description: OK
   '':
     get:
       summary: テスト用検索
       tags:
         - test_search
-      responses: {}
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
       operationId: get-test_search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: a
+        - schema:
+            type: string
+          in: query
+          name: b
+        - schema:
+            type: string
+          in: query
+          name: c
     parameters: []
   '/test_search/{a}/{b}/{c}':
     get:
@@ -173,6 +203,7 @@ paths:
               type: object
               properties: {}
       operationId: ''
+      description: ''
     post:
       summary: ''
       operationId: post-test_search
@@ -216,6 +247,20 @@ paths:
         in: path
         required: true
         description: param_c
+    put:
+      summary: ''
+      operationId: put-test_search-a-b-c
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
 components:
   schemas:
     User:
