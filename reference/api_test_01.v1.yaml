@@ -171,15 +171,15 @@ paths:
         - schema:
             type: string
           in: query
-          name: a
+          name: aa
         - schema:
             type: string
           in: query
-          name: b
+          name: bb
         - schema:
             type: string
           in: query
-          name: c
+          name: cc
     parameters: []
   '/test_search/{a}/{b}/{c}':
     get:
